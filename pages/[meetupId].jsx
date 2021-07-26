@@ -1,6 +1,8 @@
 import MeetupDetail from '../components/meetups/MeetupDetail'
 import { MongoClient, ObjectId } from 'mongodb'
 
+// TODO: essa pagina esta mt pesada! precisamos de um fix...
+
 function MeetupDetails(props) {
   return (
     <MeetupDetail
@@ -25,6 +27,7 @@ export async function getStaticPaths() {
   const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray()
 
   client.close()
+  
   return {
     fallback: false,
     paths: meetups.map(meetup => ({ params: { meetupId: meetup._id.toString() } }))
@@ -52,7 +55,7 @@ export async function getStaticProps(context) {
         image: selectedMeetup.image,
         description: selectedMeetup.description,
         address: selectedMeetup.address
-      }
+      },
     },
   }
 }
