@@ -1,0 +1,1 @@
+Arrumar <Image> do next... tentar via module CSS primeiro

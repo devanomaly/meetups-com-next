@@ -2,6 +2,7 @@
 import MeetupList from '../components/meetups/MeetupList';
 import { MongoClient } from 'mongodb';
 // FIXME: ver coisas babel para app em produção... (CSS TA FICANDO ZOADO!!! NAO ENTENDO AINDA)
+// FIXME: o problema pode ser falta de width height ou layout='fill' na Image (next component)... talvez eh melhor desabiltar o linter e usar img html nativo mesmo, sem burocracia
 
 function HomePage(props) {
   //useEffect and useState are not needed here to pass the updated DUMMY_MEETUPS!!
