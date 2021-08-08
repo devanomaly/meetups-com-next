@@ -6,7 +6,7 @@ async function handler(req, res) {
     const data = req.body
     const { title, image, address, description } = data
 
-    const client = await MongoClient.connect("mongodb+srv://gesonel:5BRh4IFGC4TAsase@learning-atlas.saxwg.mongodb.net/meetups?retryWrites=true&w=majority")
+    const client = await MongoClient.connect(process.env.MONGO_URL)
     const db = client.db()
 
     const meetupsCollection = db.collection('meetups')

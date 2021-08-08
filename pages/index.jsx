@@ -22,7 +22,7 @@ export async function getStaticProps() {
   // TODO: THIS IS REALLY IMPORTANT!! one of Next main features
   // inside here, we can fetch data from an API
   //is this called once "component did mount" ?
-  const client = await MongoClient.connect("mongodb+srv://gesonel:5BRh4IFGC4TAsase@learning-atlas.saxwg.mongodb.net/meetups?retryWrites=true&w=majority")
+  const client = await MongoClient.connect(process.env.MONGO_URL)
 
   const db = client.db()
 
