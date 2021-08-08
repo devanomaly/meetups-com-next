@@ -18,7 +18,7 @@ function MeetupDetails(props) {
 // if we use getStaticProps in dynamic paths pages, then getStaticPaths is also necessary
 
 export async function getStaticPaths() {
-  const client = await MongoClient.connect(process.env.ATLAS_URL)
+  const client = await MongoClient.connect(process.env.MONGO_URL)
 
   const db = client.db()
 
@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const meetupId = context.params.meetupId
 
-  const client = await MongoClient.connect(process.env.ATLAS_URL)
+  const client = await MongoClient.connect(process.env.MONGO_URL)
 
   const db = client.db()
 
