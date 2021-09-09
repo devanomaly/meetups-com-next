@@ -23,6 +23,7 @@ export default function NewMeetupPage() {
     router.push('/')
 
   }
+  
   return (
     <NewMeetupForm onAddMeetup={addMeetupHandler} />
   )
